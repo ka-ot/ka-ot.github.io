@@ -1,0 +1,482 @@
+:root {
+  --bg: #ffffff;
+  --paper: #ffffff;
+  --ink: #1f2933;
+  --muted: #5f6c7b;
+  --line: #d9ded8;
+  --accent: #2d5b4f;
+  --accent-light: #f2f5f3;
+  --link: #245c8d;
+  --max-width: 760px;
+  --body-size: 16px;
+  --heading-size: 1.45rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: "Times New Roman", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, serif;
+  font-size: var(--body-size);
+  line-height: 1.75;
+}
+
+html[lang="en"] body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.container {
+  width: min(100% - 40px, var(--max-width));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 246, 242, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-title {
+  display: inline-flex;
+  flex-direction: column;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.name-ja {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--body-size);
+  font-weight: 700;
+}
+
+.name-en {
+  color: var(--muted);
+  font-size: var(--body-size);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-nav a {
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  padding: 9px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: var(--ink);
+}
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  padding: 64px 0 52px;
+  background: var(--paper);
+}
+
+.hero-grid,
+.profile-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.profile-hero {
+  grid-template-columns: 1fr;
+}
+
+.english-profile-hero {
+  grid-template-columns: 190px minmax(0, 1fr);
+  align-items: center;
+}
+
+.profile-photo {
+  width: 170px;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-intro {
+  padding-left: 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.works-title-label,
+.contact-title-label {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.works-page main h1,
+.works-page main h2,
+.works-page main h3 {
+  font-family: "Times New Roman", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, serif;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.35;
+  font-family: Arial, Helvetica, "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+  font-weight: 600;
+}
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] .name-ja,
+html[lang="en"] .name-en {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: var(--heading-size);
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: var(--heading-size);
+}
+
+h3 {
+  margin: 34px 0 14px;
+  color: var(--accent);
+  font-size: var(--heading-size);
+}
+
+.subheading {
+  font-size: var(--body-size);
+}
+
+.lead {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.tag-list span {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  padding: 5px 10px;
+  color: var(--muted);
+}
+
+.profile-note {
+  border-left: 2px solid var(--line);
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.profile-note p {
+  margin: 0 0 12px;
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.works-publications {
+  padding-bottom: 28px;
+}
+
+.english-publications {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.english-contact {
+  padding-top: 28px;
+}
+
+.works-presentations,
+.works-other {
+  padding-top: 28px;
+}
+
+.profile-sections {
+  display: grid;
+  gap: 42px;
+}
+
+.contact-sections {
+  display: grid;
+  gap: 42px;
+}
+
+.contact-sections .plain-list,
+.contact-sections .link-list {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.campus-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.campus-gallery figure {
+  margin: 0;
+}
+
+.campus-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.campus-gallery figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.section-muted {
+  background: var(--paper);
+}
+
+.two-column,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+}
+
+.plain-list,
+.link-list {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.plain-list li,
+.link-list li {
+  margin-bottom: 10px;
+}
+
+.timeline {
+  margin: 0;
+}
+
+.timeline div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.timeline div:first-child {
+  padding-top: 0;
+}
+
+.timeline dt {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.timeline dd {
+  margin: 0;
+}
+
+.page-title {
+  border-bottom: 1px solid var(--line);
+  padding: 58px 0 44px;
+  background: var(--paper);
+}
+
+.publication-list {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.publication-list,
+.publication-list cite,
+.note,
+.source-note {
+  font-family: "Times New Roman", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, serif;
+}
+
+.publication-list li {
+  margin-bottom: 18px;
+  padding-left: 4px;
+}
+
+.publication-list p {
+  margin: 0;
+}
+
+.note,
+.source-note {
+  color: var(--muted);
+}
+
+.contact-mail {
+  font-size: var(--body-size);
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  background: var(--paper);
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 28px, var(--max-width));
+  }
+
+  .header-inner {
+    min-height: 64px;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 64px;
+    right: 14px;
+    left: 14px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--paper);
+    padding: 8px;
+    box-shadow: 0 16px 32px rgba(31, 41, 51, 0.12);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: 11px 12px;
+  }
+
+  .hero {
+    padding: 56px 0 48px;
+  }
+
+  .hero-grid,
+  .profile-hero,
+  .two-column,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .profile-intro {
+    padding-left: 0;
+  }
+
+  .profile-photo {
+    width: 170px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .campus-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
